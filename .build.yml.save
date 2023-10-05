@@ -1,0 +1,23 @@
+stages:
+  -test
+  -build
+  -test2
+  -deploy
+
+instal_env:
+  stage: test
+  scripts:
+    - echo :
+  stage: test
+  scripts: 
+    - echo " test "
+
+instal_env:
+  stage: test
+  scripts: 
+    - echo " test "
+
+instal_env:
+  stage: test
+  scripts: 
+    - echo " test  "
