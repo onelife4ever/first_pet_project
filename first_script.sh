@@ -30,3 +30,50 @@ crontab -e
 find home/fro/first_pet_project/ -name "*.jpg" -exec mv {} home/fro/first_pet_project/pictures \;
 # найти в директории \ название файла \ exec - выполнение действия над всеми найдеными файлами\ 
 # перенести {} - произвести со всеми найдеными файлами \ закрывающая конструкция - \;
+
+stat $SHELL
+#метаданные исполняемого файла
+file $SHELL
+#узнать что это за файл
+
+#переменные окружения: $SHELL $PWD $USER $HOME $PATH
+
+type -a pwd
+#тип программы
+
+export CITY=Moscow
+# export создает переменное окружение
+
+export CITY="$CITY is the capital of Russia"
+# перезаписать переменную окружения
+
+env
+# список всех переменных окружений
+
+set
+# просмотреть все переменные shell
+
+shell_var="text"
+# создание переменной shell
+
+env | grep shel_var
+# проверка добавления переменной шел
+
+export shell_var
+# экспорт переменной шел в переменные окружения
+
+.bashrc
+# файл где храняться переменные окружения куда можно добавить свои переменные окружения
+# в которые можно навсегда записать навсегда переменные окружения, которые при перезапуске консоли не удалаяются
+
+# переменные в shell script
+
+name=Laptop
+age=2
+
+echo "Hi! This is $name, I am $age years old"
+today=`date +'%d-%m'`
+date +'%d-%m'
+today=$(date +'%d-%m')
+today=$(date +'%d-%m') ; echo $today
+
