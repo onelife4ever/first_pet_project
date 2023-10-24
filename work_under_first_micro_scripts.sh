@@ -133,3 +133,20 @@ a -z | echo $?   # сравнение строки с наличем нуля т
 a -n | echo $?   # сравнение строки с отсутствием нуля т.е. !=0
 
 
+#####
+# Условынй оператор if
+
+test -d /home/fro/testdir && echo "Success! Directory exists."
+# если команды выполнена правильно
+test -d /home/fro/testdir || echo "Error! Directory does not exist."
+# если команда выполнена неправильно
+
+grep fro /etc/passwd || esradd fro
+
+if [date = 31.12] #квадратные скобки равнозначны команде например: test -d /tmp == [-d /tmp]
+then
+  echo "Время покупать елку."
+else
+  echo "Елку покупать еще рано."
+fi
+
