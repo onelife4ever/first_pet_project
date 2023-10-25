@@ -1,30 +1,40 @@
 #!/bin/bash
+
 name=teach+work_5.sh
 test 0=O | echo "Скрипт $name выполнен, код возврата $?."
 
 today=$(date +'%d-%m')
 if [ $today = 31-12 ]
-then
-echo "Happy New Year!"
-else
-echo "Today is $today."
+	then
+		echo "Happy New Year!"
+	else
+		echo "Today is $today."
 fi
 
 if [ $# -ne 2 ]
-then
-echo "2 argumets are needed, direcotry being moved and target directory."
+	then
+		echo "2 argumets are needed, direcotry being moved and target directory."
+		exit 1
 fi
 
 # проверка существовании переносимой директории
 if [! -d $1 ]
-then
-echo "Error! $1 does not exis or not a directory."
+	then
+		echo "Error! $1 does not exis or not a directory."
+		exit 1
 fi
-# проверка целевой деректории
+# проверка целевой директории
 if [ ! -d $2 ]
-then
-echo "Error! $2 does not exis or not a directory."
+	then
+		echo "Error! $2 does not exis or not a directory."
+	exit 1
 fi
-# удаление первичной дерриктории
-cp -r $1 $2 $$ rm -rf $1
-echo "Directory $1 was successfully moved to $2"
+# удаление первичной директории
+if cp -r $1 $2 $$ rm -rf $1
+	then
+		echo "Directory $1 was successfully moved to $2"
+		exit 0
+else
+	echo "Error! Something want wrong!"
+	exit 1
+fi
