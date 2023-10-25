@@ -7,7 +7,10 @@ today=$(date +'%d-%m')
 if [ $today = 31-12 ]
 	then
 		echo "Happy New Year!"
-	else
+elif [ $today = 08-03 ]
+	then
+		echo "Happy International Women's Day!"
+else
 		echo "Today is $today."
 fi
 
