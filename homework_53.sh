@@ -1,7 +1,7 @@
 #!/bin/bash
 
 name=teach+work_5.sh
-test 0=O | echo "Скрипт $name выполнен, код возврата $?."
+test 0=O | echo "Первая часть твоего скрипта $name выполнена, код возврата $?."
 
 today=$(date +'%d-%m')
 if [ $today = 31-12 ]
@@ -18,19 +18,19 @@ if [ $# -ne 2 ]
 fi
 
 # проверка существовании переносимой директории
-if [! -d $1 ]
+if [! -d '$1' ]
 	then
 		echo "Error! $1 does not exis or not a directory."
 		exit 1
 fi
 # проверка целевой директории
-if [ ! -d $2 ]
+if [ ! -d '$2' ]
 	then
 		echo "Error! $2 does not exis or not a directory."
 	exit 1
 fi
 # удаление первичной директории
-if cp -r $1 $2 $$ rm -rf $1
+if cp -r '$1' '$2' && rm -rf '$1'
 	then
 		echo "Directory $1 was successfully moved to $2"
 		exit 0
