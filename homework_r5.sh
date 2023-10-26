@@ -1,6 +1,6 @@
 #!/bin/bash
 
-name=teach+work_5.sh
+name=homework_r5.sh
 test 0=O | echo "Первая часть твоего скрипта $name выполнена, код возврата $?."
 
 today=$(date +'%d-%m')
