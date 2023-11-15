@@ -2,7 +2,7 @@
 
 read -p "Enter domen name:" domen_name
 
-if host "$domen_name" &> /home/onelife4ever/first_pet_project/
+if host "$domen_name" &> /dev/null
 	then
 		echo "DNS resolve work fine!"
 else 
@@ -11,7 +11,7 @@ fi
 
 read -p "Enter IP-adress name:" IP_name
 
-if ping -c4 "$IP_name" &> /home/onelife4ever/first_pet_project/
+if ping -c4 "$IP_name" &> /dev/null
 	then
 		echo "Network connection is available!"
 else
@@ -19,6 +19,6 @@ else
 exit 1
 fi
 
-ping -q -c4 "$IP_name" | tail - 3 
+ping -q -c4 "$IP_name" | tail -3 
 # -q не выводить информацию по каждому направленному запросу
 
