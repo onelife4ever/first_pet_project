@@ -2,10 +2,13 @@
 
 read -p "Enter domen name:" domen_name
 
+# host - получить по доменному имени ip-адрес
+# проверка работы доменного имени
+
 if host "$domen_name" &> /dev/null
 	then
 		echo "DNS resolve work fine!"
-else 
+else
 	echo "DNS resolve work unavailable"
 fi
 
@@ -19,6 +22,6 @@ else
 exit 1
 fi
 
-ping -q -c4 "$IP_name" | tail -3 
+ping -q -c4 "$IP_name" | tail -3
 # -q не выводить информацию по каждому направленному запросу
 
