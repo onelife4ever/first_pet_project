@@ -11,7 +11,14 @@
 ####### в одиночных скобках обязательное экранирование деления умножения выведения остатка
 read -p "Enter first value: " x
 read -p "Enter second value: " y
-read -p "Enter action symbol(+, -, /, *, ^): " operator
+read -p "Enter action symbol(+, -, /, *, ^, sqrt): " operator
+
+basic_c() {
+}
+ 
+sqrt() {
+	echo sqrt "($1)" | bc -l
+}
 
 case $operator in
 "+" ) echo "$x + $y =" $(expr "$x" + "$y");;
@@ -26,5 +33,9 @@ case $operator in
 fi;;
 "%" ) echo "$x % $y =" $(expr "$x" \% "$y");;
 "^" ) echo "$x ^ $y =" $(( "$x" ** "$y"));;
+"sqrt") echo "sqrt ($x) = " $(sqrt $x);;
+
+#$(echo sqrt "($x)" | bc -l);;
+
 * ) echo "Unknow operation!"
 esac
